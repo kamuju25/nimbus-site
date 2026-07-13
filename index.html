@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimbus &mdash; Cloud Infrastructure, Built Right</title>
+  <meta name="description" content="Nimbus designs and ships production-grade cloud infrastructure: static sites, CDNs, and secure delivery pipelines on AWS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a href="#top" class="logo">
+      <span class="logo-mark">&#9729;</span> Nimbus
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Start a project</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="cloud-field" aria-hidden="true">
+        <div class="nimbus nimbus-1"></div>
+        <div class="nimbus nimbus-2"></div>
+        <div class="nimbus nimbus-3"></div>
+      </div>
+
+      <div class="status-ticker" aria-hidden="true">
+        <span class="status-dot"></span>
+        <span id="statusText">us-east-1 &middot; distribution deployed &middot; TLS: valid &middot; 12ms edge latency</span>
+      </div>
+
+      <h1 class="hero-title">
+        Infrastructure that<br />
+        <span class="hero-title-accent">holds its shape.</span>
+      </h1>
+      <p class="hero-sub">
+        We design, provision, and harden cloud delivery systems &mdash;
+        S3, CloudFront, WAF, and DNS wired together so your site
+        stays fast, secure, and yours.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Start a project</a>
+        <a href="#process" class="btn btn-ghost">See how we build</a>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <p class="eyebrow">What we run</p>
+      <h2 class="section-title">Three layers, one system.</h2>
+      <div class="service-grid">
+        <article class="service-card">
+          <h3>Delivery</h3>
+          <p>Static hosting on S3 behind CloudFront, tuned cache policies, and origin access control so the bucket is never public.</p>
+        </article>
+        <article class="service-card">
+          <h3>Security</h3>
+          <p>AWS WAF managed rule groups, TLS via ACM, and least-privilege bucket policies scoped to a single distribution.</p>
+        </article>
+        <article class="service-card">
+          <h3>Domain &amp; DNS</h3>
+          <p>Route 53 hosted zones, alias records to your distribution, and validation records handled end to end.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS (real sequence, numbering is earned here) -->
+    <section id="process" class="section section-alt">
+      <p class="eyebrow">How a build ships</p>
+      <h2 class="section-title">The pipeline, in order.</h2>
+      <ol class="process-list">
+        <li><span class="step-index">01</span><div><h4>Content</h4><p>HTML, CSS, JS, and assets are authored and organized.</p></div></li>
+        <li><span class="step-index">02</span><div><h4>Bucket</h4><p>A private S3 bucket is created &mdash; no public website hosting flag needed.</p></div></li>
+        <li><span class="step-index">03</span><div><h4>Upload</h4><p>Files sync to S3 with correct paths and cache headers.</p></div></li>
+        <li><span class="step-index">04</span><div><h4>CloudFront</h4><p>A distribution is created with S3 as origin and a cache policy attached.</p></div></li>
+        <li><span class="step-index">05</span><div><h4>Access Control</h4><p>OAC locks the bucket to CloudFront only.</p></div></li>
+        <li><span class="step-index">06</span><div><h4>Domain</h4><p>A domain is registered or pointed via Route 53.</p></div></li>
+        <li><span class="step-index">07</span><div><h4>Certificate</h4><p>ACM issues and validates a TLS certificate in us-east-1.</p></div></li>
+        <li><span class="step-index">08</span><div><h4>WAF</h4><p>Managed rule groups are attached to the distribution.</p></div></li>
+        <li><span class="step-index">09</span><div><h4>DNS</h4><p>An alias record points the domain at CloudFront.</p></div></li>
+      </ol>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section">
+      <p class="eyebrow">Recent builds</p>
+      <h2 class="section-title">Shipped and holding steady.</h2>
+      <div class="work-grid">
+        <article class="work-card">
+          <div class="work-thumb work-thumb-1"></div>
+          <h3>Aster &amp; Co.</h3>
+          <p>Marketing site, global edge cache, 99.99% uptime over 14 months.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-thumb work-thumb-2"></div>
+          <h3>Fieldnote</h3>
+          <p>Docs portal with WAF-hardened delivery and sub-20ms TTFB.</p>
+        </article>
+        <article class="work-card">
+          <div class="work-thumb work-thumb-3"></div>
+          <h3>Harbor Supply Co.</h3>
+          <p>Storefront migration from shared hosting to S3 + CloudFront.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-contact">
+      <p class="eyebrow">Get started</p>
+      <h2 class="section-title">Tell us what you're building.</h2>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+        <div class="form-row">
+          <label for="message">Project details</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row">
+      <span class="logo-mark">&#9729;</span>
+      <p>&copy; <span id="year"></span> Nimbus. Built on S3 &amp; CloudFront.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
