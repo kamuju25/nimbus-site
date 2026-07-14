@@ -1,0 +1,14 @@
+# To access the website using the S3 URL without blocking public access, first grant this policy to the bucket.
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::nimbus-static-site-s3-bucket/*"
+    }
+  ]
+}
